@@ -18,6 +18,4 @@ node {
    }
    stage('Deploy') {
         echo 'Deploying....'
-        sh "curl -v -u deployer:deployer -T target/hello-world-war-1.0.0.war http://172.31.14.160:8080/manager/text/deploy?path=&update=true"
-   }
-}
+        sh "scp /var/lib/jenkins/workspace/p4s4/target/hello-world-war-1.0.0.war ec2-user@172.31.14.160//usr/tomcat8/webapps

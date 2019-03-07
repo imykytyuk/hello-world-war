@@ -18,6 +18,6 @@ node {
    }
    stage('Deploy') {
         echo 'Deploying....'
-        sh "curl -v -u deployer:deployer -T hello-world-war-1.0.0.war http://172.31.14.160:8080/manager/text/deploy?path=&update=true"
+        sh "curl -v -u deployer:deployer -T target/hello-world-war-1.0.0.war http://172.31.14.160:8080/manager/text/deploy?path=&update=true"
    }
 }

@@ -21,4 +21,4 @@ node {
       sh 'scp /var/lib/jenkins/workspace/p4s4/target/hello-world-war-1.0.0.war tomcat8@172.31.14.160:/usr/tomcat8/webapps/'
       
    }
-   
+}

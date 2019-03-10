@@ -11,11 +11,14 @@ node {
    stage('Build') {
       // Run the maven build
       if (isUnix()) {
-         sh "'${mvnHome}/bin/mvn'  clean package"
+         sh "'${mvnHome}/bin/mvn' clean package"
       } else {
          bat(/"${mvnHome}\bin\mvn" clean package/)
       }
    }
    stage('Deploy') {
-        echo 'Deploying....'
-        sh "scp /var/lib/jenkins/workspace/p4s4/target/hello-world-war-1.0.0.war ec2-user@172.31.14.160/usr/tomcat8/webapps
+      sh 'whoami' 
+      sh 'scp /var/lib/jenkins/workspace/p4s4/target/hello-world-war-1.0.0.war tomcat8@172.31.14.160:/usr/tomcat8/webapps/'
+      
+   }
+   

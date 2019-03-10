@@ -1,4 +1,4 @@
-node ('master') {
+node {
    def mvnHome
    stage('Preparation') { // for display purposes
       // Get some code from a GitHub repository
@@ -18,7 +18,8 @@ node ('master') {
    }
    stage('Deploy') {
       sh 'whoami' 
-      sh 'scp /var/lib/jenkins/workspace/p4s4/target/hello-world-war-1.0.0.war tomcat8@172.31.14.160:/usr/tomcat8/webapps/'
+      sh 'scp /var/lib/jenkins/workspace/d4p4/target/hello-world-war-1.0.0.war tomcat8@172.31.14.160:/usr/tomcat8/webapps/'
       
    }
 }
+
